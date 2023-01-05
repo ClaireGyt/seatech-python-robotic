@@ -71,7 +71,7 @@ class Robot():
         return self.__current_speed
 
     def __str__(self): # must return a string
-        return "Robot %s [state: %s current speed : %s battery_level : %s ]"%(self.name, self.states,self.speed, self.__battery_level)
+        return "Robot %s [state: %s current speed : %s battery_level : %s ]"%(self.name, self.states, self.speed, self.__battery_level)
   
     #def __repr__(self): # must return a string
      #   return str({"name":self.name, "size":self.size})
@@ -90,8 +90,7 @@ if __name__ == '__main__':
   r.charge()
   r.shutdown()
   r.status()
-  str(r)
-
+  print(r)
   print("\nEncore encore !")
   r.status()
   r.boot()
