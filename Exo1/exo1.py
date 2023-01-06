@@ -2,11 +2,13 @@ import time
 ROBOT_COUNT = 0
 
 class Robot():
-    __name = "<unnamed>"
-    __power = False
-    __current_speed = 0
-    __battery_level = 0
-    __states = ['shutdown', 'running']
+    # __name = "<unnamed>"
+    # __power = False
+    # __current_speed = 0
+    # __battery_level = 0
+    #__states = ['shutdown', 'running']
+    __slots__ = ('__name' , '__states', '__current_speed' ,'__current_status' , '__power',
+                '__current_speed', '__battery_level')
       
     """
       Give your best code here ( •̀ ω •́ )✧
@@ -16,8 +18,11 @@ class Robot():
     def __init__(self, name=None):
         if name:
             self.__name = name
+        self.__states = ['shutdown', 'running']
         self.__current_status = self.__states[0]
         self.__power = False
+        self.__current_speed = 0
+        self.__battery_level=0
         global ROBOT_COUNT
         ROBOT_COUNT += 1
 
