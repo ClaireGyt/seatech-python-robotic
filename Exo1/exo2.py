@@ -8,7 +8,7 @@ class Robot():
 
 HUMAN_COUNT = 0
 class Human():   
-    __sexe='"<undefined>"'
+    __sexe = None
     __stomac_content = []
 
     def __init__(self, sexe=None):
@@ -25,14 +25,15 @@ class Human():
         if type(food) is str:
             food = [food]
         self.__stomac_content += food
-        print('Miam, delicious ', ' and '.join(food))
+        print('Miam  ', ' and '.join(food))
 
     def digest(self):   
         while len(self.__stomac_content):
             print('Digest ', self.__stomac_content.pop(), '...')
             time.sleep(1)
 
-        print('*Glouglouglouglou noises are coming from belly...*')
+        print('*grrl grrl grl are coming from belly...*')
+
 
 class Cyborg(Robot, Human):   
 
@@ -40,7 +41,8 @@ class Cyborg(Robot, Human):
         Robot.__init__(self, name)
         Human.__init__(self, sexe)
     
-    #def fun(self):
+    def fun(self):
+        pass
 
 
     # if __name__ == '__main__':
@@ -55,6 +57,7 @@ class Cyborg(Robot, Human):
     #     cyborg.digest()
     
 if __name__ == '__main__':
+    
     cyborg = Cyborg('Deux Ex Machina', 'M')
 
     print(cyborg.name, 'sexe', cyborg.sexe)

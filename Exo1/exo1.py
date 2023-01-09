@@ -49,12 +49,12 @@ class Robot():
         return self.__current_status
 
     def boot(self):
-        self.power = True
+        self.__power = True
         self.__current_status = self.__states[1]
         self.__current_speed = 0
 
     def shutdown(self):   
-        self.power = False
+        self.__power = False
         self.__current_status = self.__states[0]
         self.__current_speed = 0   
 
