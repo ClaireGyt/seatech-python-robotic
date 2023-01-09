@@ -89,29 +89,29 @@ class Robot():
     def __str__(self): # must return a string
         return "Robot %s [State: %s Current Speed : %s km/h Battery Level : %s ]"%(self.name, self.__current_status, self.__current_speed, self.__battery_level)
     
-if __name__ == '__main__':
-  r = Robot()
-  r.name = "Wally"
-  r.move(100)
-  r.boot()
-  r.move(100)
-  r.charge()
-  r.move(100)
-  print(r.name + "'s speed:", r.speed())
-  r.stop()
-  print(r.name + "'s speed:", r.speed())
-  r.shutdown()
-  r.boot()
+# if __name__ == '__main__':
+#   r = Robot()
+#   r.name = "Wally"
+#   r.move(100)
+#   r.boot()
+#   r.move(100)
+#   r.charge()
+#   r.move(100)
+#   print(r.name + "'s speed:", r.speed())
+#   r.stop()
+#   print(r.name + "'s speed:", r.speed())
+#   r.shutdown()
+#   r.boot()
 
 
-  r = Robot(name="Terminator")
-  r.status()
-  r.boot()
-  r.status()
-  r.charge()
-  r.shutdown()
-  r.status()
-  print(r)
+#   r = Robot(name="Terminator")
+#   r.status()
+#   r.boot()
+#   r.status()
+#   r.charge()
+#   r.shutdown()
+#   r.status()
+#   print(r)
   
 
   

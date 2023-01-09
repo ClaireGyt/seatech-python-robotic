@@ -1,10 +1,7 @@
 from exo1 import Robot
 import time
+import sys
 
-class Robot():
-    @staticmethod
-    def create_simple_robot():
-        return Robot()
 
 HUMAN_COUNT = 0
 class Human():   
@@ -16,7 +13,7 @@ class Human():
             self.__sexe = sexe
         global HUMAN_COUNT
         HUMAN_COUNT += 1
-
+        
     @property   
     def sexe(self):
         return self.__sexe
@@ -40,30 +37,38 @@ class Cyborg(Robot, Human):
     def __init__(self, name, sexe):   
         Robot.__init__(self, name)
         Human.__init__(self, sexe)
+        
     
-    def fun(self):
-        pass
+    def sing(self):
+        print(" ------ ")
+        print("| @  @ |    🎵 🎵")
+        print("|  []  |  🎵  🎵 🎵 🎵 🎵")
+        print(" ------ ")
+        
+        print(" ------ ")
+        print("| @  @ |    🎵 🎵")
+        print("|   ~  |  🎵  🎵 🎵 🎵 🎵")
+        print(" ------ ")
 
+        print(" ------ ")
+        print("| @  @ |    🎵 🎵")
+        print("|   0  |  🎵  🎵 🎵 🎵 🎵")
+        print(" ------ ")
 
-    # if __name__ == '__main__':
-    #     cyborg = Cyborg('Deux Ex Machina', 'M')
-
-    #     print(cyborg.name, 'sexe', cyborg.sexe)
-    #     print('Charging battery...')
-    #     cyborg.charge()
-    #     cyborg.status()
-    #     cyborg.eat('banana')
-    #     cyborg.eat(['coca', 'chips'])
-    #     cyborg.digest()
     
 if __name__ == '__main__':
-    
+
+
+    h=Human(sexe='M')
+    print( 'sexe', h.sexe)
+
     cyborg = Cyborg('Deux Ex Machina', 'M')
 
-    print(cyborg.name, 'sexe', cyborg.sexe)
+    #print(cyborg.name, 'sexe', cyborg.sexe)
     cyborg.charge()
     cyborg.status()
     cyborg.eat('banana')
-    cyborg.eat(['coca', 'chips'])
+    cyborg.eat(['water', 'pineaple'])
     cyborg.digest()
+    cyborg.sing()
     
