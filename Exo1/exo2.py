@@ -30,6 +30,10 @@ class Human():
             time.sleep(1)
 
         print('*grrl grrl grl are coming from belly...*')
+    
+    def __str__(self): # must return a string
+        return 'Hi from Human %s [%s] !'%(self.name, self.sexe)
+        
 
 
 class Cyborg(Robot, Human):   
@@ -44,7 +48,7 @@ class Cyborg(Robot, Human):
         print("| @  @ |    🎵 🎵")
         print("|  []  |  🎵  🎵 🎵 🎵 🎵")
         print(" ------ ")
-        
+
         print(" ------ ")
         print("| @  @ |    🎵 🎵")
         print("|   ~  |  🎵  🎵 🎵 🎵 🎵")
@@ -55,7 +59,11 @@ class Cyborg(Robot, Human):
         print("|   0  |  🎵  🎵 🎵 🎵 🎵")
         print(" ------ ")
 
-    
+    def __str__(self): # must return a string
+        #super().__init__(name, 'surface')
+        return 'Hi from Cyborg %s [%s] !'%(self.name, self.sexe)
+        #print('Hi from Cyborg %s [%s] !'%(self.name, self.sexe))
+
 if __name__ == '__main__':
 
 
