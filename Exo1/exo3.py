@@ -12,42 +12,97 @@ class UnmannedVehicle(classmeta=ABCMeta):
 
 class AerialVehicle(classmeta=ABCMeta):
     """ A vehicle made for ground fields."""
-    pass
-
-class GroundVehicle(classmeta=ABCMeta):
-    """ A vehicle made for ground fields."""
+    
+    @abstractmethod
+    def fly(self):
+        print('Now in the sky')
 
     @abstractmethod
+    def land(self):
+        print('Landed with success')
+
+    def start_mission(self, mission):
+        print('Aerial mission start :', mission)
+        self.fly()
+
+    def stop_mission(self):
+        print('Aerial mission stop.')
+        self.land()
+
+    def status(self):
+        print('Unmanned Aerial Vehicle')
+
+
+class GroundVehicle(classmeta=ABCMeta):
+
+    """ A vehicle made for ground fields."""
+    @abstractmethod
     def move(self, forward=True):
-         print('Move [forward=%s]'%(forward))
+        pass
 
+    @abstractmethod
+    def stop(self):
+        pass
 
-    
+    @abstractmethod
+    def status(self):
+        pass
+
 
 class UnderseaVehicle(classmeta=ABCMeta):
     """ A vehicle made for ground fields."""
-    pass
+    @abstractmethod
+    def dive(self):
+        pass
 
-class UAV():
+    @abstractmethod
+    def surface(self):
+        pass
+
+    @abstractmethod
+    def status(self):
+        pass
+
+class UAV(UnmannedVehicle, AerialVehicle):
     """Unmanned Aerial Vehicle"""
-    pass
+    def fly(self):
+        print('Now in the sky')
+
+    def land(self):
+        print('Landed with success')
+
+    def start_mission(self, mission):
+        print('Aerial mission start :', mission)
+        self.fly()
+
+    def stop_mission(self):
+        print('Aerial mission stop.')
+        self.land()
+
+    def status(self):
+        print('Unmanned Aerial Vehicle')
+        
 
 class UUV():
     """Unmanned Undersea Vehicle"""
     pass
 
-class UGV():
+class UGV(UnmannedVehicle, GroundVehicle):
     """Unmanned Ground Vehicle"""
-    pass
+    
 
-uav = UAV()
-uav.do_something_interesting()
-uav.do_something_aerial_specific()
 
-ugv = UGV()
-ugv.do_something_interesting()
-ugv.do_something_ground_specific()
 
-uuv = UUV()
-uuv.do_something_interesting()
-uuv.do_something_undersea_specific()
+if __name__ == '__main__':
+
+    uav = UAV()
+    uav.do_something_interesting()
+    uav.do_something_aerial_specific()
+
+    ugv = UGV()
+    ugv.do_something_interesting()
+    ugv.do_something_ground_specific()
+
+    uuv = UUV()
+    uuv.do_something_interesting()
+    uuv.do_something_undersea_specific()
