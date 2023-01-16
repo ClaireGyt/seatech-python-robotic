@@ -61,8 +61,6 @@ class UAV(UnmannedVehicle, AerialVehicle):
         print('Landed with success')
 
     def start_mission(self, mission):
-        #super().start_mission(self, mission)
-        #"super().__start_mission(mission, 'UAV starting mission')
         print('Aerial mission start :', mission)
         self.fly()
 
