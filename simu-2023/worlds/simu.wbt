@@ -1,0 +1,93 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "../../../home/seatech/projet/seatech-python-robotic/simu-2023/protos/CircleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/MattePaint.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/toys/protos/RubberDuck.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/solids/protos/SolidBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/robotis/turtlebot/protos/TurtleBot3Burger.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.6319330934532807 0.4435240682814495 0.6355682231307976 0.600334895396478
+  position -4.74979512179477 -2.33195387249716 4.420754921731128
+}
+TexturedBackground {
+  texture "noon_stormy_empty"
+}
+TexturedBackgroundLight {
+  luminosity 1.5
+}
+RubberDuck {
+  translation 3.718755060761983 3.7339459225146094 2.178291748653102
+  rotation 0.023979063593680933 0.006550797654042445 0.999690998038527 0.7167403930784212
+  name "duck1"
+  scale 7
+}
+RubberDuck {
+  translation -3.7373091252141815 -3.69481250696921 2.1782889779828865
+  rotation 0.005120900949218926 -0.008323549895385514 0.9999522463050958 -2.216578769803748
+  name "duck3"
+  scale 7
+  bodyColor 0.878431 0.105882 0.141176
+}
+RubberDuck {
+  translation -3.7260995650550472 3.744013004215595 2.180441068928069
+  rotation 0.006507710533942062 -0.0019532470741383543 0.9999769169983243 2.402746084576354
+  name "duck4"
+  scale 7
+  bodyColor 0.878431 0.105882 0.141176
+}
+RubberDuck {
+  translation 3.7300217767326576 -3.6961901809400297 2.1782876402762184
+  rotation 0.020259122143101122 -0.010754904423875541 -0.9997369153936572 0.7832197877343117
+  name "duck2"
+  scale 7
+  bodyColor 0.180392 0.760784 0.494118
+}
+CircleArena {
+  name "defeat arena"
+  radius 8
+  floorAppearance MattePaint {
+    baseColor 0.300008 0.0119936 0.0119936
+  }
+}
+SolidBox {
+  translation 0 0 2
+  rotation 0 1 0 0
+  name "arena"
+  size 8 8 0.1
+  appearance PBRAppearance {
+    baseColor 0 0 0
+    baseColorMap ImageTexture {
+    }
+    roughness 0.5
+    metalness 0
+  }
+}
+TurtleBot3Burger {
+  hidden position_0_0 3.7439999916813256
+  hidden position_0_1 3.743999991280346
+  hidden position_0_2 8.075911654879711
+  hidden position2_0_2 503.1377522551674
+  hidden position3_0_2 -3.7882999634526855
+  hidden position_1_0 33.17760000000002
+  hidden position_1_1 33.17760000000002
+  hidden rotation_2 0.5040130892414921 -0.6107241872439132 -0.6107264305632346 4.075295549186705
+  hidden translation_3 -0.05472712803920497 -0.010000000000000002 -0.04516455730091155
+  hidden rotation_3 0.5040130892414921 -0.6107241872439132 -0.6107264305632346 4.075295549186705
+  hidden translation_8 0 -0.08 0.033
+  hidden rotation_8 0 0.9999999999999999 0 2.17320399169576
+  hidden translation_9 0 0.08 0.033
+  hidden rotation_9 -0.4654981010795065 2.22204279671872e-06 0.8850488788120328 3.1415940341698168
+  hidden translation_10 -0.081 0 0.004
+  hidden rotation_10 0.3826108025840841 -0.6717321684900583 0.6343381334600711 3.110447956903987
+  translation 0.085295 0.000485417 2.18975
+  rotation -0.0002517100408787303 -0.792865128764509 0.6093970989685576 0.005854649999984401
+  controller "turtlebot3_ostacle_avoidance"
+  controllerArgs [
+    ""
+  ]
+}
