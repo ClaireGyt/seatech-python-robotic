@@ -3,9 +3,9 @@ from controller import gyro
 CAMERA_SAMPLING_PERIOD = 50
 CAMERA_RECOGNITION_SAMPLING_PERIOD = 100
  
-class TurtleLidar(Camera):
+class TurtleLidar(Lidar):
     def __init__(self):
-        super().__init__('camera')
+        super().__init__('lidar')
         self.enable(CAMERA_SAMPLING_PERIOD)
         self.recognitionEnable(CAMERA_RECOGNITION_SAMPLING_PERIOD)
         self.__tracked_name = None
