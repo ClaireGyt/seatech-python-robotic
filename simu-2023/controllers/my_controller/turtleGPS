@@ -1,0 +1,10 @@
+from controller import Lidar
+
+
+
+
+
+
+class TurtleLidar(Lidar):
+    def __init__(self):
+        super().__init__("LDS-01")

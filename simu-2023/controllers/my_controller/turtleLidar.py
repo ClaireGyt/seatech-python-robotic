@@ -1,13 +1,41 @@
-from controller import gyro
+from controller import Lidar
 
-CAMERA_SAMPLING_PERIOD = 50
-CAMERA_RECOGNITION_SAMPLING_PERIOD = 100
- 
 class TurtleLidar(Lidar):
     def __init__(self):
-        super().__init__('lidar')
-        self.enable(CAMERA_SAMPLING_PERIOD)
-        self.recognitionEnable(CAMERA_RECOGNITION_SAMPLING_PERIOD)
+        super().__init__("LDS-01")
+        self.enable(timestep)
+
+
+        
+
+
+
+        
+        range_image = self.getRangeImage()
+        print("{}".format(range_image))
+
+        timestep = int(self.getBasicTimeStep())
+
+        
+        Lidar.enablePointCloud(); # Enable the point cloud computation
+
+        while self.step(timestep) != -1:
+            
+            lidarPoints = Lidar.getPointCloud(); # Get the point cloud
+
+            # Print out the x, y, z, and layer information for the first point in the point cloud    
+            print("x: " + str(lidarPoints[0].x) + " y: " + str(lidarPoints[0].y) + " z: " + str(lidarPoints[0].z) + " layer: " + str(lidarPoints[0].layer_id))
+
+
+
+        
+
+
+
+
+""" 
+
+
         self.__tracked_name = None
         self.__recognized_object = None
 
@@ -38,4 +66,4 @@ class TurtleLidar(Lidar):
             if self.__tracked_name == obj.get_model().decode("utf-8"):
                 self.__recognized_object = obj
                 return True
-        return False
+        return False """
