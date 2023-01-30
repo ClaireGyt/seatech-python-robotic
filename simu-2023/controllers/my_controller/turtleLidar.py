@@ -1,5 +1,18 @@
 from controller import Lidar
 
+class Lidar_Controller():
+    def __init__(self, robot) -> None:
+        self. timestep = int(robot.getBasicTimeStep())
+        self.front_lidar =robot.getDevice('lidar')
+        self.front_lidar.enable(self.timestep)
+        self.front_lidar.enablePointCloud()
+
+
+
+
+
+""" from controller import Lidar
+
 class TurtleLidar(Lidar):
     def __init__(self):
         super().__init__("LDS-01")
@@ -33,10 +46,10 @@ class TurtleLidar(Lidar):
 
 
 
-""" 
 
 
-        self.__tracked_name = None
+
+ self.__tracked_name = None
         self.__recognized_object = None
 
     @property
@@ -66,4 +79,4 @@ class TurtleLidar(Lidar):
             if self.__tracked_name == obj.get_model().decode("utf-8"):
                 self.__recognized_object = obj
                 return True
-        return False """
+        return False """ 
