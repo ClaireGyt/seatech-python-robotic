@@ -118,7 +118,7 @@ PROTO TurtleBot3Burger [
           }
           physics Physics {
             density -1
-            mass 0.028499
+            mass 20.0
             centerOfMass [
               0 0 0
             ]
